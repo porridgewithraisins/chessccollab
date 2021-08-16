@@ -1,3 +1,0 @@
-idea:
-each analysis board is a socket.io room
-it is served on a dynamic url "/roomID"

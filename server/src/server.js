@@ -12,7 +12,7 @@ import { nanoid } from "nanoid/async";
 import { resolve } from "path";
 
 (async function init(){
-    
+
     const __dirname = resolve();
     const app = express();
     const http = createServer(app);
@@ -35,6 +35,7 @@ import { resolve } from "path";
     
     // this should sent the built svelte app
     app.get("/:roomID", (_req, res) => {
+        
         res.sendFile(__dirname + "/App.html");
     });
     
