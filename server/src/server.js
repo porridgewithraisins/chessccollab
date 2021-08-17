@@ -2,7 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { BOARD_CHANGE_EVENT, DEV_WEB_URI, PORT } from "./constants.js";
-import { ioHandler } from "./ioHandler.js";
+import { ioHandler } from "./io/ioHandler.js";
 import { resolve } from "path";
 import { generateRandomRoomID } from "./roomIdGenerator.js";
 
@@ -21,23 +21,25 @@ app.get("/generateRoomId", async (_req, res) => {
 
 // this should sent the built svelte app
 app.get("/:roomID", (_req, res) => {
-    res.sendFile(__dirname + "/App.html");
+    res.send("app");
 });
 
 //landing
 app.get("/", (_req, res) => {
-    res.sendFile(__dirname + "/index.html");
+    res.send("landing");
 });
 
 const http = createServer(app);
-const io = new Server(http, {
-    cors: {
-        origin: DEV_WEB_URI,
-        methods: ["GET", "POST"],
-    },
-});
 
-ioHandler(io);
+ioHandler(
+    new Server(http, {
+        cors: {
+            origin: DEV_WEB_URI,
+            methods: ["GET", "POST"],
+        },
+    })
+);
+
 http.listen(PORT, () => {
     console.log(`Socket.IO server running at http://localhost:${PORT}/`);
 });
