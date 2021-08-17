@@ -3,7 +3,7 @@ export const PORT = process.env.PORT || 3000;
 //room ID, minimum 7, increase if collisions.
 export const ROOM_ID_LENGTH = parseInt(process.env.ID_LENGTH) || 7;
 
-export const ROOM_ID_ALPHABET = "[A-Za-z0-9_-]";
+export const ROOM_ID_ALPHABET = "[A-Za-z0-9-_]";
 
 export const DEV_WEB_URI = "http://localhost:5000";
 

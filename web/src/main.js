@@ -1,14 +1,14 @@
 import App from './App.svelte';
 import io from 'socket.io-client';
-import { serverURI } from './constants';
 
-const rooms = ['first', 'second'];
-const idx = Math.floor(Math.random()*2);
-console.log(rooms[idx]);
-const socket = io(`http://localhost:3000/${rooms[idx]}`);
-socket.emit("test", "hi from client");
-socket.on('test', (payload) => {
-	console.log('message from server:', payload);
+const socket = io(`ws://localhost:3000/GQt2YZ-`);
+socket.emit("boardstatechanged", {
+    FEN: "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    PGN: "1. e4",
+    TOPLAY: "BLACK",
+});
+socket.onAny((event, payload) => {
+	console.log('message from server:', event, ': ', payload);
 });
 
 const app = new App({
