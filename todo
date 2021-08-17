@@ -1,0 +1,6 @@
+left : client side
+requirements:
+1. get namespace to join if new else just join
+2. attach name to socket
+3. use event to use for boardstatechange(gotten from initial request)
+    for further ws communication
