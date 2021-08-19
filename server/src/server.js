@@ -8,6 +8,7 @@ import { generateRandomRoomID } from "./roomIdGenerator.js";
 
 const __dirname = resolve();
 const app = express();
+
 // before websocket connection, client will receive a namespace to connect to
 app.get("/generateRoomId", async (_req, res) => {
     const roomID = await generateRandomRoomID();

@@ -25,7 +25,6 @@ export const removeItem = async (roomID) =>
 
 /**
  * Clears the storage completely
- * @returns `void`, wrapped in a promise
  */
 export const removeAll = async () => await storage.clear();
 
@@ -47,7 +46,7 @@ export const setBoardState = async (roomID, state) =>
 
 /**
  * @param {string} roomID the room ID(socketio namespace) of the room, whose board state is to be retrieved
- * @returns the result(success/failure) of the get operation, wrapped in a promise
+ * @returns the board state, wrapped in a promise
  */
 export const getBoardState = async (roomID) =>
     await storage.getItem(sanitize(roomID));
@@ -57,4 +56,4 @@ export const getBoardState = async (roomID) =>
  * @returns `true` if it exists, `false` otherwise, wrapped in a promise
  */
 export const roomExists = async (roomID) =>
-    await getBoardState(sanitize(roomID));
+    !!(await getBoardState(sanitize(roomID)));

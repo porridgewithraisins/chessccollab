@@ -1,4 +1,4 @@
-import { roomExists } from "../persistence.js";
+import { roomExists } from "../storage.js";
 
 /**
  * Middleware that checks if the roomID(socketio namespace) the socket sent
