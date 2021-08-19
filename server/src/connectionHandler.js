@@ -1,5 +1,5 @@
-import { BOARD_CHANGE_EVENT } from "../constants.js";
-import { getBoardState, setBoardState } from "../storage.js";
+import { BOARD_CHANGE_EVENT } from "./constants.js";
+import { getBoardState, setBoardState } from "./storage.js";
 
 /**
  * Adds `connect`, `disconnecting`, `disconnect` listeners.

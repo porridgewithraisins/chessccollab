@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite3": "^7.4.3",
     "express": "^4.17.1",
     "nanoid": "^3.1.25",
     "node-persist": "^3.1.0",
