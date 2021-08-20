@@ -16,7 +16,7 @@ export const BOARD_CHANGE_EVENT = "boardstatechanged";
 
 export const LICHESS_TABLEBASE_URI = "http://tablebase.lichess.ovh/standard";
 
-export const DATABASE_OPTIONS = {
+export const OPENINGS_DATABASE_OPTIONS = {
     readonly: true,
 };
 export const OPENINGS_TABLE = "openings";
@@ -25,3 +25,6 @@ export const FEN_COLUMN = "fen";
 export const ECO_COLUMN = "eco";
 export const NAME_COLUMN = "name";
 export const MOVES_COLUMN = "moves";
+
+
+export const ROOMS_TABLE = "rooms";

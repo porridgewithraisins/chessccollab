@@ -1,6 +1,6 @@
 import Database from "better-sqlite3";
 import {
-    DATABASE_OPTIONS,
+    OPENINGS_DATABASE_OPTIONS,
     OPENINGS_TABLE,
     ECO_COLUMN,
     FEN_COLUMN,
@@ -13,7 +13,7 @@ const __dirname = path.resolve();
 
 const db = new Database(
     path.join(__dirname, `${OPENINGS_TABLE}.sqlite`),
-    DATABASE_OPTIONS
+    OPENINGS_DATABASE_OPTIONS
 );
 
 const selectEcoAndName = `SELECT ${ECO_COLUMN}, ${NAME_COLUMN} FROM ${OPENINGS_TABLE} WHERE ${FEN_COLUMN} = (?)`;
