@@ -2,7 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { BOARD_CHANGE_EVENT, DEV_WEB_URI, PORT } from "./constants.js";
-import { ioHandler } from "./io/ioHandler.js";
+import { ioHandler } from "./ioHandler.js";
 import { resolve } from "path";
 import { generateRandomRoomID } from "./roomIdGenerator.js";
 

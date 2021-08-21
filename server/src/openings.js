@@ -28,9 +28,11 @@ export const findEcoAndNameOfFen = (FEN) => {
     if (row === undefined) {
         return [undefined, undefined];
     }
-    
+
     return [row[ECO_COLUMN], row[NAME_COLUMN]];
 };
+
+export const findEcoAndNameOfFenJSON = (FEN) => require("../codes.json")[FEN];
 
 export const findFenAndMovesOfName = (Name) => {
     const row = stmtFenAndMoves.get(Name);

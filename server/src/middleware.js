@@ -1,4 +1,4 @@
-import { roomExists } from "../storage.js";
+import { roomExists } from "./storage.js";
 
 /**
  * Middleware that checks if the roomID(socketio namespace) the socket sent

@@ -1,4 +1,4 @@
-import { ROOM_ID_ALPHABET, ROOM_ID_LENGTH } from "../constants.js";
+import { ROOM_ID_ALPHABET, ROOM_ID_LENGTH } from "./constants.js";
 import { connectionHandler } from "./connectionHandler.js";
 import { middleware } from "./middleware.js";
 
